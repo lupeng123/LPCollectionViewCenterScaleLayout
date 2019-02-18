@@ -18,6 +18,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.isNavigationBarHidden = true;
+        self.automaticallyAdjustsScrollViewInsets = false;
+        
         self.dataArr = ["1","2","3","4","5","6",]
         
         let layout = LPCollectionViewCenterScaleLayout();
