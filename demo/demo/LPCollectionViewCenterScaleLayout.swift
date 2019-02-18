@@ -64,14 +64,14 @@ class LPCollectionViewCenterScaleLayout: UICollectionViewLayout {
         }
         
         var offsetX = returnAttr == nil ? 0 : returnAttr.center.x-(self.collectionView?.frame.size.width ?? 0)*0.5;
-        let maxOffsetX = (self.collectionView?.contentSize.width ?? UIScreen.main.bounds.size.width) - UIScreen.main.bounds.size.width
+        let maxOffsetX = (self.collectionView?.contentSize.width ?? AppWidth) - AppWidth
         if (Int(proposedContentOffset.x) < 10 || fabs(proposedContentOffset.x-maxOffsetX)<10) {
             offsetX = proposedContentOffset.x;
         }
         let point = CGPoint(x: Int(offsetX), y: Int(proposedContentOffset.y))
         
         let itemDistance = self.itemSize.width + self.realLineSpacing;
-        self.scrollToCount = Int(offsetX/itemDistance);
+        self.scrollToCount = Int(Int(offsetX)/Int(itemDistance));
         
         return point;
     }

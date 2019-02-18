@@ -23,7 +23,6 @@ class CustomCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame);
-        self.backgroundColor = UIColor.red;
         self.setUI();
     }
     
